@@ -1,0 +1,46 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #000000;
+  font-family: sans-serif;
+}
+
+/* Responsive UI Container */
+.ui-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  pointer-events: none; /* Lets you click the 3D globe through the empty space */
+}
+
+/* Make inner elements clickable again */
+.ui-panel, .ui-toggle {
+  pointer-events: auto; 
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .ui-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .ui-panel {
+    width: 100%;
+  }
+  .ui-panel input {
+    width: calc(100% - 110px); /* Adjust input width on mobile */
+  }
+}
